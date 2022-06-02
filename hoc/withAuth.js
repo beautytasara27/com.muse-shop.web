@@ -10,7 +10,7 @@ export const withAuth = (Component) => (props) => {
   }, [token, isLoading]);
 
   const authCheck = () => {
-    const unprotectedRoutes = ["/auth/signin"];
+    const unprotectedRoutes = ["/auth/signin", "/"];
     const path = router.asPath.split("?")[0];
     console.log("auth check", path);
     if (!token && !unprotectedRoutes.includes(path)) {
